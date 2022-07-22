@@ -1,20 +1,20 @@
 ###Whole genome assemblies produced:
 
 * Whole genome sequencing at Klasson's Lab
-* * D. paulistorum O11
-* * D. paulistorum MS
-* * D. paulistorum A28
+ * D. paulistorum O11
+ * D. paulistorum MS
+ * D. paulistorum A28
 
 * Retreived published reads:
 Data from the article by Kim et al. 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
-* * D. paulistorum L12
-* * D. paulistorum L06
-* * D. willistoni LG3
-* * D. willistoni 00
-* * D. tropicalis
-* * D. insularis
-* * D. sp
-* * D. sucinea
+ * D. paulistorum L12
+ * D. paulistorum L06
+ * D. willistoni LG3
+ * D. willistoni 00
+ * D. tropicalis
+ * D. insularis
+ * D. sp
+ * D. sucinea
 
 
 |Species|Starting number of reads|Starting base pairs|Starting coverage|Subsampling method|Number of reads post-subsample|Base pairs post-subsample|Coverage post-subsample|
