@@ -72,7 +72,7 @@ nextgraph_options = -a 1
 
 One must adapt the settings according to the capacity of your own computer/server in which you are running it, check guidelines [here](https://nextdenovo.readthedocs.io/en/latest/OPTION.html) and [here](https://nextdenovo.readthedocs.io/en/latest/FAQ.html#how-to-optimize-parallel-computing-parameters).
 
-After assembly, contigs are renamed with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/fasta_rename_nextdenovo.pl) to 
+After assembly, contigs are renamed with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/fasta_rename_nextdenovo.pl) to keep them simple and without spaces nor symbols.
 
 
 
