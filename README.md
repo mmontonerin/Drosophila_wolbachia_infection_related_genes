@@ -2,7 +2,7 @@
 ## Pipeline from genome assembly to gene analysis 
 ### Analysis of some of the genes involved in the interaction of Wolbachia and Drosophila, both in restricted and systemic infections
 
-##Data
+## Data
 * Klasson's Lab
 	* Nanopore sequencing
         	* D. paulistorum O11
