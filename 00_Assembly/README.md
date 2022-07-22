@@ -114,6 +114,13 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
 
 
+## Assembly assessment
+
+* Run [BUSCO v5.2.2](https://gitlab.com/ezlab/busco/-/releases/5.2.2)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_BUSCO_assembly_evaluation)
+
+* Run [Quast v5.0.2](http://bioinf.spbau.ru/quast)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation)
 
 
 
