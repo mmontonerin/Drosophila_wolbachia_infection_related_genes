@@ -5,20 +5,27 @@
 ## Data
 * Klasson's Lab
 	* Nanopore sequencing
+
         	* D. paulistorum O11
         	* D. paulistorum MS
         	* D. paulistorum A28
+
 	* Illumina sequencing
+
 		* D. paulistorum O11
                 * D. paulistorum MS
                 * D. paulistorum A28
 		* D. tropicalis
+
 	* RNA Illumina sequencing
+
 		* D. paulistorum O11
                 * D. paulistorum A28
 
 * [Kim *et al.* 2021](https://elifesciences.org/articles/66405):
+
         * Nanopore sequencing
+
 		* D. paulistorum L12
         	* D. paulistorum L06
         	* D. willistoni LG3
@@ -27,7 +34,9 @@
         	* D. insularis
         	* D. sp
         	* D. sucinea
+
 	* Illumina sequencing
+
 		* D. paulistorum L06
                 * D. willistoni LG3
                 * D. willistoni 00
@@ -35,7 +44,9 @@
                 * D. sp
                 * D. sucinea
 * [Flybase.org](https://flybase.org/)
+
 	* Proteome
+
 		* D. melanogaster r6.46 FB2022 03
 		* D. willistoni r1.3 FB2015 01
 
