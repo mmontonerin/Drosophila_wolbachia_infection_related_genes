@@ -88,16 +88,30 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 ## Assembly polish
 
 * Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools) 
-
-Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish)
 
 * Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants 
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish)
 
-Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish)
+* Filter VCF to `QUAL>=30 && FMT/DP>=10 && FMT/GQ>=30 && FMT/VAF>=0.8` and change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
 
+* Map Illumina reads to the genome assembly using [BWA](https://github.com/lh3/bwa) and [samtools](https://github.com/samtools/samtools)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
+	* Illumina sequences from Klasson's lab:
+		* D. paulistorum O11
+		* D. paulistorum MS (Used for D. paulistorum L12 assembly as well)
+		* D. paulistorum A28
+		* D. tropicalis
+	* Illumina sequences from [Kim *et al.* 2021](https://elifesciences.org/articles/66405)
+		* D. insularis
+		* D. willistoni 00
+		* D. willistoni LG3
+		* D. sucinea
+		* D. sp (possible D. sucinea as well)
 
-
-
+* Run [Pilon v1.24](https://github.com/broadinstitute/pilon) assembly polish
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_3_pilon_assembly_polish.sh)
 
 
 
