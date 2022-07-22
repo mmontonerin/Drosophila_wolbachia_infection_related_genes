@@ -5,9 +5,9 @@
 ## Data
 * Klasson's Lab
 	* Nanopore sequencing
-        	* D. paulistorum O11
-        	* D. paulistorum MS
-        	* D. paulistorum A28
+		* D. paulistorum O11
+		* D. paulistorum MS
+		* D. paulistorum A28
 
 	* Illumina sequencing
 		* D. paulistorum O11
