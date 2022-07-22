@@ -6,9 +6,6 @@
 	* D. paulistorum A28
 
 * Retreived published reads:
-
-Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
-
 	* D. paulistorum L12
 	* D. paulistorum L06
 	* D. willistoni LG3
@@ -17,6 +14,8 @@ Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 
 	* D. insularis
 	* D. sp
 	* D. sucinea
+
+Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
 
 ## Sub-sample of reads
 Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
