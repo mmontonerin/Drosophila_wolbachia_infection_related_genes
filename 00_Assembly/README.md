@@ -6,6 +6,7 @@
 	* D. paulistorum A28
 
 * Retreived published reads:
+
 Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 drosophilid genomes](https://elifesciences.org/articles/66405)
 	* D. paulistorum L12
 	* D. paulistorum L06
@@ -35,20 +36,27 @@ Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 
 ## Whole genome assembly
 Using [NextDenovo v2.5.0](https://github.com/Nextomics/NextDenovo/releases/tag/v2.5.0)
+
 (Example with D. paulistorum A28)
+
 Create a folder for each assembly to be made
+
 `mkdir A28_nextdenovo`
+
 `cd A28_nextdenovo`
 
 Copy the sub-sampled (For Dpau O11,MS,A28), or not (all the rest) fastq file to the folder:
+
 `cp /path/read_data.fastq ./A28_length_filtered_40X.fastq.gz`
 
 Create input.fofn with assembly location/name in folder:
+
 `ls *fastq.gz | cat > input.fofn`
 
 Create run.cfg file:
 ```
-[General]                                                                                         job_type = local
+[General]
+job_type = local
 job_prefix = nextDenovo
 task = all 
 rewrite = yes 
@@ -80,10 +88,13 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 ## Assembly polish
 
 * Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools) 
+
 Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish)
 
 * Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants 
+
 Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish)
+
 
 
 
