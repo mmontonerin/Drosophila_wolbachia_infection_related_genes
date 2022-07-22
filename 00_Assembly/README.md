@@ -1,4 +1,4 @@
-###Whole genome assemblies produced:
+### Whole genome assemblies produced:
 
 * Whole genome sequencing at Klasson's Lab
 	* D. paulistorum O11
@@ -16,7 +16,7 @@ Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 
 	* D. sp
 	* D. sucinea
 
-##Sub-sample of reads
+## Sub-sample of reads
 Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 |Species|Starting number of reads|Starting base pairs|Starting coverage|Subsampling method|Number of reads post-subsample|Base pairs post-subsample|Coverage post-subsample|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -33,7 +33,7 @@ Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 |D. sucinea|-|-|-|No subsample|-|-|-|
 
 
-##Whole genome assembly
+## Whole genome assembly
 Using [NextDenovo v2.5.0](https://github.com/Nextomics/NextDenovo/releases/tag/v2.5.0)
 (Example with D. paulistorum A28)
 Create a folder for each assembly to be made
@@ -77,7 +77,7 @@ One must adapt the settings according to the capacity of your own computer/serve
 After assembly, contigs are renamed with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/fasta_rename_nextdenovo.pl) to keep them simple and without spaces nor symbols.
 
 
-##Assembly polish
+## Assembly polish
 
 * Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools) 
 Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish)
