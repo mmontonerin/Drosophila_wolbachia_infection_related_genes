@@ -29,8 +29,7 @@
 		* D. insularis
 		* D. sp
 		* D. sucinea
-
-* Illumina sequencing
+	* Illumina sequencing
 		* D. paulistorum L06
 		* D. willistoni LG3
 		* D. willistoni 00
