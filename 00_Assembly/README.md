@@ -21,9 +21,9 @@ Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 
 Using [Filt-long v0.2.1](https://github.com/rrwick/Filtlong)
 |Species|Starting number of reads|Starting base pairs|Starting coverage|Subsampling method|Number of reads post-subsample|Base pairs post-subsample|Coverage post-subsample|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|D. paulistorum O11|1376601|19454247303|77|[Quality priority, 50X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_O11_subsample)|827899|12500020744|50|
-|D. paulistorum MS|2738679|23800779581|91|[Length priority, 40X, using non-downsampled assembly as reference](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_MS_subsample)|430957|10000006739|38|
-|D. paulistorum A28|3424749|27698779973|113|[Length priority, 40X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_A28_subsample)|318515|10000006664|41|
+|D. paulistorum O11|1376601|19454247303|77|[Quality priority, 50X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_O11_subsample.sh)|827899|12500020744|50|
+|D. paulistorum MS|2738679|23800779581|91|[Length priority, 40X, using non-downsampled assembly as reference](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_MS_subsample.sh)|430957|10000006739|38|
+|D. paulistorum A28|3424749|27698779973|113|[Length priority, 40X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_A28_subsample.sh)|318515|10000006664|41|
 |D. paulistorum L12|1461479|8394212233|35|No subsample|-|-|-|
 |D. paulistorum L06|1178699|13536125176|50|No subsample|-|-|-|
 |D. willistoni LG3|-|-|-|No subsample|-|-|-|
@@ -88,10 +88,10 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 ## Assembly polish
 
 * Map long reads to genome assembly with [Minimap2](https://github.com/lh3/minimap2) and [samtools](https://github.com/samtools/samtools) 
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_0_map_long_reads_assembly_polish.sh)
 
 * Use [P.E.P.P.E.R-Marign-DeepVariant r.0.4](https://github.com/kishwarshafin/pepper/releases/tag/r0.4) to call variants 
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_1_Pepper_assembly_polish.sh)
 
 * Filter VCF to `QUAL>=30 && FMT/DP>=10 && FMT/GQ>=30 && FMT/VAF>=0.8` and change the variants left in the VCF on the genome assembly with [bcftools](https://github.com/samtools/bcftools)
 	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/01_2_filterVCF_post-PEPPER_assembly_polish.sh)
@@ -117,10 +117,10 @@ After assembly, contigs are renamed with [this script](https://github.com/mmonto
 ## Assembly assessment
 
 * Run [BUSCO v5.2.2](https://gitlab.com/ezlab/busco/-/releases/5.2.2)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_BUSCO_assembly_evaluation)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_BUSCO_assembly_evaluation.sh)
 
 * Run [Quast v5.0.2](http://bioinf.spbau.ru/quast)
-	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation)
+	* Commands [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/02_QUAST_assembly_evaluation.sh)
 
 
 
