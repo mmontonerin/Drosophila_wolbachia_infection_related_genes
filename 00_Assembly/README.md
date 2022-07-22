@@ -19,9 +19,9 @@ Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 
 
 |Species|Starting number of reads|Starting base pairs|Starting coverage|Subsampling method|Number of reads post-subsample|Base pairs post-subsample|Coverage post-subsample|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|D. paulistorum O11|1376601|19454247303|77|Quality priority, 50X|827899|12500020744|50|
-|D. paulistorum MS|2738679|23800779581|91|Length priority, 40X, using non-downsampled assembly as reference|430957|10000006739|38|
-|D. paulistorum A28|3424749|27698779973|113|Length priority, 40X|318515|10000006664|41|
+|D. paulistorum O11|1376601|19454247303|77|[Quality priority, 50X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_O11_subsample)|827899|12500020744|50|
+|D. paulistorum MS|2738679|23800779581|91|[Length priority, 40X, using non-downsampled assembly as reference](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_MS_subsample)|430957|10000006739|38|
+|D. paulistorum A28|3424749|27698779973|113|[Length priority, 40X](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/00_D_paulistorum_A28_subsample)|318515|10000006664|41|
 |D. paulistorum L12|1461479|8394212233|35|No subsample|-|-|-|
 |D. paulistorum L06|1178699|13536125176|50|No subsample|-|-|-|
 |D. willistoni LG3|-|-|-|No subsample|-|-|-|
@@ -30,6 +30,54 @@ Data from the article by Kim *et al.* 2021 [Highly contiguous assemblies of 101 
 |D. insularis|-|-|-|No subsample|-|-|-|
 |D. sp|-|-|-|No subsample|-|-|-|
 |D. sucinea|-|-|-|No subsample|-|-|-|
+
+
+##Running [NextDenovo 2.5.0](https://github.com/Nextomics/NextDenovo/releases/tag/v2.5.0)
+(Example with D. paulistorum A28)
+Create a folder for each assembly to be made
+`mkdir A28_nextdenovo`
+`cd A28_nextdenovo`
+
+Copy the sub-sampled (For Dpau O11,MS,A28), or not (all the rest) fastq file to the folder:
+`cp /path/read_data.fastq ./A28_length_filtered_40X.fastq.gz`
+
+Create input.fofn with assembly location/name in folder:
+`ls *fastq.gz | cat > input.fofn`
+
+Create run.cfg file:
+```
+[General]                                                                                         job_type = local
+job_prefix = nextDenovo
+task = all 
+rewrite = yes 
+deltmp = yes
+parallel_jobs = 4
+input_type = raw
+read_type = ont # clr, ont, hifi
+input_fofn = /space/no_backup/merce/nextdenovo/filter_reads/A28_filtered_40X_length/input.fofn
+workdir = /space/no_backup/merce/nextdenovo/filter_reads/A28_filtered_40X_length/A28_nextdenovo_filter_40X_length
+
+[correct_option]
+read_cutoff = 1k
+genome_size = 250m 
+sort_options = -m 7g -t 2 
+minimap2_options_raw = -t 3
+pa_correction = 17
+correction_options = -p 2
+
+[assemble_option]
+minimap2_options_cns = -t 3
+nextgraph_options = -a 1
+```
+
+One must adapt the settings according to the capacity of your own computer/server in which you are running it, check guidelines [here](https://nextdenovo.readthedocs.io/en/latest/OPTION.html) and [here](https://nextdenovo.readthedocs.io/en/latest/FAQ.html#how-to-optimize-parallel-computing-parameters).
+
+After assembly, contigs are renamed with [this script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/00_Assembly/fasta_rename_nextdenovo.pl) to 
+
+
+
+
+
 
 
 
