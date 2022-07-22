@@ -1,4 +1,5 @@
-# Pipeline of the study of Drosophila species in the group Willistoni, from genome assembly to gene analysis 
+# Genomics of Drosophila species in the group Willistoni
+## Pipeline from genome assembly to gene analysis 
 ### Analysis of some of the genes involved in the interaction of Wolbachia and Drosophila, both in restricted and systemic infections
 
 ##Data
