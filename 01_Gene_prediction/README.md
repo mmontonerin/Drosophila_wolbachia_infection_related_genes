@@ -12,6 +12,12 @@ The complete pipeline in Snakemake format can be found [here](https://bitbucket.
 
 The modified Snakefile to run only the repeat analysis pipeline can be found [here]() 
 
+Pipeline in brief:
+
+* De novo prediction of repeat and transposable elements with [RepeatModeler v1.0.8](https://www.repeatmasker.org/RepeatModeler/)
+* Repeat library used to mask the genome assembly with [RepeatMasker v4.0.7]()  
+
+
 ## Gene prediction
 
 
