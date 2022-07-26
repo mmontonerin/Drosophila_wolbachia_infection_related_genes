@@ -27,4 +27,91 @@ OrthoFinder requires dependencies as well, and so the following modules were loa
 
 ### Analysis of Autophagy related genes (Atg) and Antimicrobial peptides (Att and Dpt)
 
-The correspondent gene name to all these genes in D. melanogaster was manually searched for in flybase.org, then grep among all orthogroups and copied into different folders to continue the analysis with the following [script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/copy_orthogroups_to_folder.sh).
+The correspondent gene name to all these genes in D. melanogaster was manually searched for in flybase.org, then grep among all orthogroups and copied into different folders to continue the analysis with [copy_orthogroups_to_folder.sh](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/copy_orthogroups_to_folder.sh).
+
+The obtained orthogroups also had some genes with alternative isoforms in the Drosophila species of the willistoni group, post-BRAKER pipeline. Only the longest isoform was kept by running [keep_long_isoforms.py](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/keep_long_isoforms.py)
+
+```
+for i in ./ATG/*fa
+do
+        j=$(basename $i .fa)
+        python keep_long_isoforms.py -i $i -n 1 > ./ATG/"$j"_oneiso.fa
+done
+
+for i in ./ATT/*fa
+do
+        j=$(basename $i .fa)
+        python keep_long_isoforms.py -i $i -n 1 > ./ATT/"$j"_oneiso.fa
+done
+
+for i in ./DPT/*fa
+do
+        j=$(basename $i .fa)
+        python keep_long_isoforms.py -i $i -n 1 > ./DPT/"$j"_oneiso.fa
+done
+```
+
+Stop codons (*) were removed to avoid problems with alignment Software later
+
+```
+for i in ./ATG/*iso.fa
+do
+        sed -i 's/\*//g' $i
+done
+
+for i in ./ATT/*iso.fa
+do
+      sed -i 's/\*//g' $i    
+done
+
+for i in ./DPT/*iso.fa
+do
+     sed -i 's/\*//g' $i
+done
+```
+
+[MAFFT v7.407](https://mafft.cbrc.jp/alignment/software/) was used to align the orthologue sequences
+
+```
+for i in ./ATG/*iso.fasta
+do
+        j=$(basename $i .fasta)
+        mafft $i > ./ATG/"$j"_mafft.fasta
+done
+
+for i in ./ATT/*iso.fasta
+do
+        j=$(basename $i .fasta)
+        mafft $i > ./ATT/"$j"_mafft.fasta
+done
+
+for i in ./DPT/*iso.fasta
+do
+        j=$(basename $i .fasta)
+        mafft $i > ./DPT/"$j"_mafft.fasta
+done
+```
+
+The alignments were trimmed with [TrimAl v1.4.1](http://trimal.cgenomics.org/)
+```
+for i in ./ATG/*mafft.fasta
+do
+        j=$(basename $i .fasta)
+        trimal -in "$i" -out ./ATG/"$j"_trim.fasta -gt 0.1
+
+done
+
+for i in ./DPT/*mafft.fasta
+do
+        j=$(basename $i .fasta)
+        trimal -in "$i" -out ./DPT/"$j"_trim.fasta -gt 0.1
+
+done
+
+for i in ./ATT/*mafft.fasta
+do
+        j=$(basename $i .fasta)
+        trimal -in "$i" -out ./ATT/"$j"_trim.fasta -gt 0.1
+
+done
+```
