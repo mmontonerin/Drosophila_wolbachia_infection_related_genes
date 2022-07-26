@@ -67,3 +67,9 @@ STAR --runThreadN 20 \
 * IntronMax selected based on previous proteome information in D. paulistorum.
 
 ### Gene prediction
+
+Gene prediction was done with [Braker v2.1.6](https://github.com/Gaius-Augustus/BRAKER)
+
+Commands for species with RNA data [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/01_Gene_prediction/braker_with_RNA_data.sh) (with D. paulistorum O11 as example)
+
+Commands for species without RNA data [here](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/01_Gene_prediction/braker_without_RNA_data.sh) (with D. sp as example)
