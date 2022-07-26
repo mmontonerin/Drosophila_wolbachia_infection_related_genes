@@ -1,6 +1,6 @@
 # cluster.yaml - cluster configuration file for annotation workflow
 __default__:
-  account: snic2021-22-563 # enter your snic compute project account ID
+  account: # enter your snic compute project account ID
   time: 01:00:00
   n: 1
   partition: core

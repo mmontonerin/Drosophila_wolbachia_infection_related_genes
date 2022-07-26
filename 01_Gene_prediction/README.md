@@ -6,11 +6,11 @@ Commands [here]()
 
 ## Repeat modeler and masker
 
-I modified the pipeline made by Verena Kutchera, at the National Bioinformatics Infrastructure Sweden (NBIS), to only run the part involving repeat analysis. 
+I modified the pipeline made by Verena Kutchera, at the National Bioinformatics Infrastructure Sweden (NBIS), to only run the part involving repeat analysis.
 
 The complete pipeline in Snakemake format can be found [here](https://bitbucket.org/scilifelab-lts/genemark_fungal_annotation/)
 
-The modified Snakefile to run only the repeat analysis pipeline can be found [here]() 
+The modified Snakefile to run only the repeat analysis pipeline can be found [here](), as well as the [configuration file](), and the [cluster file](). The Snakemake environment folders can be retreived from the original pipeline linked above.
 
 Pipeline in brief:
 
@@ -19,8 +19,3 @@ Pipeline in brief:
 
 
 ## Gene prediction
-
-
-
-
-
