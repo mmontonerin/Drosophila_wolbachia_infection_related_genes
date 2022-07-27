@@ -146,3 +146,51 @@ do
         ./rename_pre_phy.pl $i ./DPT/"$j".fasta Sequences_after_rename.log
 done
 ```
+
+Files were transformed from FASTA to PHYLIP format with the script [fasta_to_phy.py](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/fasta_to_phy.py)
+
+```
+for i in ./ATG/*trim.fasta
+do
+        j=$(basename $i .fasta)
+        python fasta_to_phy.py -i $i -o ./ATG/"$j".phy
+done
+
+for i in ./ATT/*trim.fasta
+do
+        j=$(basename $i .fasta)
+        python fasta_to_phy.py -i $i -o ./ATT/"$j".phy
+done
+
+for i in ./DPT/*trim.fasta
+do
+        j=$(basename $i .fasta)
+        python fasta_to_phy.py -i $i -o ./DPT/"$j".phy
+done
+```
+
+### Phylogenetics
+
+[IQTREE2 v2.20](http://www.iqtree.org/) was used to produce phylogenies for each of the aligned orthologous Atg, Att, and Dpt genes between species.
+
+*Dependencies loaded in our cluster: gcc/9.3.0 openmpi/3.1.5*
+
+```
+for i in ./ATG/*phy
+do
+        j=$(basename $i .phy)
+        iqtree2 -s $i --prefix ./ATG/"$j" --seed 120 -m MFP -b 100
+done
+
+for i in ./ATT/*phy
+do
+        j=$(basename $i .phy)
+        iqtree2 -s $i --prefix ./ATT/"$j" --seed 120 -m MFP -b 100
+done
+
+for i in ./DPT/*phy
+do
+        j=$(basename $i .phy)
+        iqtree2 -s $i --prefix ./DPT/"$j" --seed 120 -m MFP -b 100
+done
+```
