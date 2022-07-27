@@ -115,3 +115,34 @@ do
 
 done
 ```
+
+Then, the fasta files are renamed again, this time with the script [rename_pre_phy.pl](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/rename_pre_phy.pl) so that we keep a very short name for each header, so that it can be transformed properly to PHYLIP format.
+
+```
+#Usage rename_pre_phy.pl:
+#./rename_pre_phy.pl <fasta> <new_fasta> <common_log_file>
+#Start by removing possible existent log file
+
+rm Sequences_after_rename.log
+
+echo -e "ATG\n" >> Sequences_after_rename.log
+for i in ./ATG/*iso.fa
+do
+        j=$(basename $i .fa)
+        ./rename_pre_phy.pl $i ./ATG/"$j".fasta Sequences_after_rename.log
+done
+
+echo -e "\n\nATT\n" >> Sequences_after_rename.log
+for i in ./ATT/*iso.fa
+do
+        j=$(basename $i .fa)
+        ./rename_pre_phy.pl $i ./ATT/"$j".fasta Sequences_after_rename.log
+done
+
+echo -e "\n\nDPT\n" >> Sequences_after_rename.log
+for i in ./DPT/*iso.fa
+do
+        j=$(basename $i .fa)
+        ./rename_pre_phy.pl $i ./DPT/"$j".fasta Sequences_after_rename.log
+done
+```
