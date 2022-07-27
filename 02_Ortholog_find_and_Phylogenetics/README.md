@@ -169,7 +169,7 @@ do
 done
 ```
 
-### Phylogenetics
+## Phylogenetics
 
 [IQTREE2 v2.20](http://www.iqtree.org/) was used to produce phylogenies for each of the aligned orthologous Atg, Att, and Dpt genes between species.
 
@@ -193,4 +193,21 @@ do
         j=$(basename $i .phy)
         iqtree2 -s $i --prefix ./DPT/"$j" --seed 120 -m MFP -b 100
 done
+```
+
+## Phylogenomics
+
+The tool gene_stitcher.py in [https://github.com/ballesterus/Utensils](https://github.com/ballesterus/Utensils) was used to concatenate all the single copy genes that OrthoFinder found and create a partition file.
+
+*Important, Python 2.7 needed*
+
+The resulting partition file to the matrix looks like this:
+```
+ = 1-541;
+ = 542-703;
+```
+I transform it with [prepare_partition_file_for_iqtree.pl](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/prepare_partition_file_for_IQtree.pl) to this:
+```
+AA, part1 = 1-541
+AA, part2 = 542-703
 ```

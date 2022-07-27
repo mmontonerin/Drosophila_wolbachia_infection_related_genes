@@ -22,7 +22,7 @@ while (my $line = <PART>)
 {
         chomp $line;
         {
-                if ($line =~ /(=.+;)/)
+                if ($line =~ /(=.+);/)
                 {
                         $i++;
                         print OUTPUT "AA, part$i $1\n";
