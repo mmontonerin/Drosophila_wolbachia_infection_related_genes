@@ -196,8 +196,9 @@ done
 ```
 
 ## Phylogenomics
+All the single copy genes that OrthoFinder found were aligned and modified in the same ways as the genes explained above, separately.
 
-The tool gene_stitcher.py in [https://github.com/ballesterus/Utensils](https://github.com/ballesterus/Utensils) was used to concatenate all the single copy genes that OrthoFinder found and create a partition file.
+Then, the tool gene_stitcher.py in [https://github.com/ballesterus/Utensils](https://github.com/ballesterus/Utensils) was used to concatenate those alignments and create a partition file.
 
 *Important, Python 2.7 needed*
 
@@ -210,4 +211,9 @@ I transform it with [prepare_partition_file_for_iqtree.pl](https://github.com/mm
 ```
 AA, part1 = 1-541
 AA, part2 = 542-703
+```
+
+Run IQTREE2:
+```
+iqtree2 -s SuperMatrix.phy -p Partition_SCG.txt -m MFP -b 100 -nt 20
 ```
