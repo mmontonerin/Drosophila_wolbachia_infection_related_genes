@@ -13,7 +13,7 @@ Both proteomes (and specially D. melanogaster) contain a big amount of alternati
 A [script](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/parsing_FB_translation_file.pl) produced by Guilherme Baião was used to only obtain the longest isoform for each gene from the translation fasta file of flybase.org, maintaining the gene number for further analysis that would require obtaining the information associated with each gene from flybase.org.
 
 ##### BRAKER output
-Gene predictions in fasta format from the BRAKER pipeline were renamed with [the following commands](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/rename_braker_output_fasta_headers.sh) so that headers would contain a shorter version of the species name and an underscore, so that it can be parsed and reduced later in the pipeline, where some programs require short fasta headers.   
+Gene predictions in fasta format from the BRAKER pipeline were renamed with [rename_braker_output_fasta_headers.sh](https://github.com/mmontonerin/Drosophila_wolbachia_infection_related_genes/blob/main/02_Ortholog_find_and_Phylogenetics/rename_braker_output_fasta_headers.sh) so that headers would contain a shorter version of the species name and an underscore, so that it can be parsed and reduced later in the pipeline, where some programs require short fasta headers.   
 
 ### Ortholog finder
 
